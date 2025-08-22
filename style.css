@@ -20,6 +20,7 @@ body {
   text-align: center;
 }
 
+
 #typewriter {
   font-size: 2.5rem;
   color: #fff;
@@ -46,39 +47,45 @@ body {
   padding-left: 4px;
 }
 
+
 @keyframes blink {
   0%, 50% { opacity: 1; }
   50.01%, 100% { opacity: 0; }
 }
+
 
 /* Fade-in/ fade-out animations */
 .fade-in {
   animation: fadeIn 1.2s ease forwards;
 }
 
+
 .fade-out {
   animation: fadeOut 1s ease forwards;
 }
+
 
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1;}
 }
 
+
 @keyframes fadeOut {
   from { opacity: 1; }
   to { opacity: 0; visibility: hidden;}
 }
 
+
 /* Slider container & title */
 #slider-container {
   min-height: 100vh;
-  padding: 2rem 1rem 4rem;
-  background: #000;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;   /* Add this line for vertical centering */
+  justify-content: center; /* This vertically centers content */
+  background: #000;
+  padding: 0;
 }
 
 
@@ -106,18 +113,22 @@ body {
   user-select: none;
 }
 
+
 .gallery::-webkit-scrollbar {
   height: 10px;
 }
+
 
 .gallery::-webkit-scrollbar-thumb {
   background-color: gold;
   border-radius: 10px;
 }
 
+
 .gallery::-webkit-scrollbar-track {
   background: #333;
 }
+
 
 /* Gallery images */
 .gallery-img {
@@ -134,6 +145,7 @@ body {
   flex-shrink: 0;
 }
 
+
 .gallery-img.active {
   height: 500px;
   width: 180px;
@@ -145,6 +157,7 @@ body {
   background: #111;
   transition: all 0.42s cubic-bezier(.19,.57,.3,.98);
 }
+
 
 /* Caption below images */
 #caption {
@@ -161,6 +174,7 @@ body {
   user-select: none;
 }
 
+
 #caption strong {
   display: block;
   font-size: 1rem;
@@ -168,15 +182,6 @@ body {
   color: #fffacd;
 }
 
-/* Confetti */
-/* #confetti-wrapper { */
-  /* pointer-events: none;
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: 50;
-  overflow: visible;
-  mix-blend-mode: screen;
-} */
 
 /* Responsive */
 @media (max-width: 860px) {
@@ -186,10 +191,11 @@ body {
     max-width: 95vw;
   }
   #slider-title {
-    font-size: 1.8rem;
+    font-size: 2.5rem; /* Increased font size on mobile */
+    margin-bottom: 1rem; /* Reduced margin */
   }
   .gallery {
-    height: 45vh;
+    height: 40vh; /* Reduced height to avoid excess space */
     gap: 0.6rem;
   }
   .gallery-img {
