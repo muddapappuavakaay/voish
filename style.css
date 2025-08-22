@@ -83,9 +83,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* This vertically centers content */
+  justify-content: center; /* Vertically centers content */
   background: #000;
   padding: 0;
+  flex: 1; /* NEW: Take full height of parent flexbox */
 }
 
 
@@ -102,9 +103,9 @@ body {
 /* Gallery styling */
 .gallery {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
-  height: 90vh;
+  height: auto;
   gap: 1.3rem;
   overflow-x: auto;
   padding-bottom: 1rem;
@@ -112,7 +113,6 @@ body {
   max-width: 90vw;
   user-select: none;
 }
-
 
 .gallery::-webkit-scrollbar {
   height: 10px;
@@ -184,27 +184,33 @@ body {
 
 
 /* Responsive */
-@media (max-width: 860px) {
-  #typewriter {
-    font-size: 1.8rem;
-    padding: 1.3rem 2rem;
-    max-width: 95vw;
-  }
+@media (max-width: 600px) {
   #slider-title {
-    font-size: 2.5rem; /* Increased font size on mobile */
-    margin-bottom: 1rem; /* Reduced margin */
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  #slider-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center !important; /* Force vertical centering */
   }
   .gallery {
-    height: 40vh; /* Reduced height to avoid excess space */
-    gap: 0.6rem;
+    height: auto !important;
+    align-items: center !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    justify-content: center !important;
+
   }
   .gallery-img {
-    height: 170px;
+    height: 150px;
     width: 45px;
   }
   .gallery-img.active {
-    height: 270px;
-    width: 120px;
+    height: 220px;
+    width: 100px;
   }
   #caption {
     font-size: 1rem;
