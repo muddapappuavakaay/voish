@@ -1,0 +1,207 @@
+/* Fonts and base */
+body {
+  background: #000;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+/* Typewriter container */
+#typewriter-container {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  z-index: 100;
+  padding: 1rem;
+  text-align: center;
+}
+
+#typewriter {
+  font-size: 2.5rem;
+  color: #fff;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  max-width: 700px;
+  line-height: 1.5;
+  padding: 0;           /* No padding */
+  background: none;     /* No background */
+  border-radius: 0;     /* No rounded corners */
+  box-shadow: none;     /* No shadow */
+  border: none;         /* No border */
+  white-space: pre-wrap; /* Preserve line breaks */
+}
+
+
+/* Blinking cursor */
+#cursor {
+  font-size: 2.8rem;
+  font-family: 'Roboto Mono', monospace;
+  color: #fff;
+  animation: blink 1s steps(2, start) infinite;
+  user-select: none;
+  padding-left: 4px;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+/* Fade-in/ fade-out animations */
+.fade-in {
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.fade-out {
+  animation: fadeOut 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1;}
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; visibility: hidden;}
+}
+
+/* Slider container & title */
+#slider-container {
+  min-height: 100vh;
+  padding: 2rem 1rem 4rem;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;   /* Add this line for vertical centering */
+}
+
+
+#slider-title {
+  font-size: 3.5rem;        /* Larger size */
+  font-family: 'Pacifico', cursive;  /* Change to Pacifico */
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #fff;
+  text-shadow: none;
+}
+
+
+/* Gallery styling */
+.gallery {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 90vh;
+  gap: 1.3rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+  max-width: 90vw;
+  user-select: none;
+}
+
+.gallery::-webkit-scrollbar {
+  height: 10px;
+}
+
+.gallery::-webkit-scrollbar-thumb {
+  background-color: gold;
+  border-radius: 10px;
+}
+
+.gallery::-webkit-scrollbar-track {
+  background: #333;
+}
+
+/* Gallery images */
+.gallery-img {
+  height: 350px;
+  width: 80px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.22);
+  cursor: pointer;
+  opacity: 0.77;
+  border: 2px solid #ddd;
+  filter: brightness(0.8) blur(0.5px);
+  transition: all 0.42s cubic-bezier(.19,.57,.3,.98);
+  flex-shrink: 0;
+}
+
+.gallery-img.active {
+  height: 500px;
+  width: 180px;
+  opacity: 1;
+  z-index: 10;
+  box-shadow: 0 4px 40px rgba(255,215,0,0.3), 0 2px 28px rgba(0,0,0,0.83);
+  border: 3px solid gold;
+  filter: none;
+  background: #111;
+  transition: all 0.42s cubic-bezier(.19,.57,.3,.98);
+}
+
+/* Caption below images */
+#caption {
+  margin-top: 12px;
+  font-size: 1.3rem;
+  max-width: 750px;
+  background: #111;
+  padding: 1rem 2rem;
+  border-radius: 14px;
+  box-shadow: 0 0 14px rgba(255, 215, 0, 0.4);
+  color: rgb(255, 254, 250);
+  min-height: 4.5rem;
+  text-align: center;
+  user-select: none;
+}
+
+#caption strong {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 6px;
+  color: #fffacd;
+}
+
+/* Confetti */
+/* #confetti-wrapper { */
+  /* pointer-events: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 50;
+  overflow: visible;
+  mix-blend-mode: screen;
+} */
+
+/* Responsive */
+@media (max-width: 860px) {
+  #typewriter {
+    font-size: 1.8rem;
+    padding: 1.3rem 2rem;
+    max-width: 95vw;
+  }
+  #slider-title {
+    font-size: 1.8rem;
+  }
+  .gallery {
+    height: 45vh;
+    gap: 0.6rem;
+  }
+  .gallery-img {
+    height: 170px;
+    width: 45px;
+  }
+  .gallery-img.active {
+    height: 270px;
+    width: 120px;
+  }
+  #caption {
+    font-size: 1rem;
+    max-width: 90vw;
+  }
+}
